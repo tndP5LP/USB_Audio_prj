@@ -16,7 +16,9 @@ int main(void)
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-
+    
+    InitApp();
+#if 0
    UART_dbg_Start();
 
    I2C_M_FF_Start();
@@ -28,7 +30,8 @@ int main(void)
    NewLine();
    TriggerScope();
    I2C_S_PCF8574_Test();    
-    
+#endif  /* #if 0 */
+
     for(;;)
     {
         /* Place your application code here. */
