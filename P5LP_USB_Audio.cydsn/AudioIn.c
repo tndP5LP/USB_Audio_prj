@@ -37,16 +37,8 @@
 * Cypress software license agreement.
 *******************************************************************************/
 
-#include <AudioControl.h>
-#include <Interrupts.h>
-#include <Application.h>
-#include <AudioControl.h>
-#include <Config.h>
-#include <AudioOut.h>
-#include <AudioIn.h>
 #include <project.h>
-#include <Codec.h>
-
+#if 0
 extern uint8 inBuffer[IN_BUFSIZE];
 extern CYBIT audioClkConfigured;
 
@@ -372,6 +364,6 @@ void HandleAudioInBuffer(void)
         clearInBuffer = 0;
     }
 }
-
+#endif  /* #if 0  */
 
 /* [] END OF FILE */

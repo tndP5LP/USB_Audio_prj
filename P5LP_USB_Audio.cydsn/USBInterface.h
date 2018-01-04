@@ -40,7 +40,6 @@
 #if !defined(USBINTERFACE_H)
 	#define USBINTERFACE_H
 
-	#include <Config.h>
 	#include <project.h>
 
 	#define MINIMUM_FEEDBACK_REQUEST                0x08 

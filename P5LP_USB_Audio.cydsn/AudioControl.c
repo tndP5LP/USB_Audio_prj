@@ -36,16 +36,8 @@
 * liability. Use of this Software may be limited by and subject to the applicable
 * Cypress software license agreement.
 *******************************************************************************/
-#include <Application.h>
-#include <AudioControl.h>
-#include <AudioOut.h>
-#include <AudioIn.h>
-#include <Codec.h>
-#include <Config.h>
 #include <project.h>
-#include <Interrupts.h>
-#include <USBInterface.h>
-
+#if 0
 uint8 newRate = RATE_48KHZ;
 extern uint8 asyncready;
 
@@ -210,5 +202,5 @@ void HandleSamplingFrequencyChangeRequest(void)
         
     }
 }
-
+#endif  /* #if 0  */
 /* [] END OF FILE */

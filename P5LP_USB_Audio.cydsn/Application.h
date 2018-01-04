@@ -41,7 +41,7 @@
 	#define APP_H
 		
 	#include "Config.h"
-	#include <UART.h>
+	#include <UART_dbg.h>
 		
 	#ifdef TXDEBUG
 		#define PRINT	UART_UartPutString

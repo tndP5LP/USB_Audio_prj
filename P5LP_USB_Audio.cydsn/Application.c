@@ -36,16 +36,9 @@
 * liability. Use of this Software may be limited by and subject to the applicable
 * Cypress software license agreement.
 *******************************************************************************/
-#include <Application.h>
-#include <AudioControl.h>
-#include <Config.h>
 #include <project.h>
-#include <Interrupts.h>
-#include <stdio.h>
-#include <USBInterface.h>
-#include <Gesture.h>
-#include <Codec.h>
-
+//#include <stdio.h>
+#if 0
 static void HandleUserInputs(uint32 gesture);
 
 
@@ -112,8 +105,7 @@ void InitApp(void)
 	
 	Update_VolumeAudioOut();
 	
-	I2S_Start();	
-	
+	I2S_Start();		
 	USBFS_Start(PC_MAC_AUDIO_WITH_VOLUME_DEVICE, USBFS_5V_OPERATION);
     USBDeviceState = USB_INIT_AFTER_ENUMERATION_REQUIRED;
 	
@@ -125,8 +117,7 @@ void InitApp(void)
 	CyIntSetPriority(CYDMA_INTR_NUMBER, 0);
 	
 	USBFS_LoadInEP(MAC_PC_HID_CONTROL_ENDPOINT, &playlistControlReport, sizeof(playlistControlReport));
-	USBFS_LoadInEP(MAC_PC_HID_CONTROL_ENDPOINT, USBFS_NULL, sizeof(playlistControlReport) );	
-	
+	USBFS_LoadInEP(MAC_PC_HID_CONTROL_ENDPOINT, USBFS_NULL, sizeof(playlistControlReport) );		
 	Async_Feedback_Counter_Start();
 	
 	CapSense_Start();
@@ -189,7 +180,7 @@ void RunApplication(void)
 *******************************************************************************/
 static void HandleUserInputs(uint32 gesture)
 {    
-	static uint32 volUpdateThreshold = 0;
+    static uint32 volUpdateThreshold = 0;
 	static uint8 prevReport;	
 	static bool volumeReport = false;
 	#if (UP_BUTTON_FUNCTION == MIC_MUTE)
@@ -365,7 +356,6 @@ static void HandleUserInputs(uint32 gesture)
 			USBFS_LoadInEP(MAC_PC_HID_CONTROL_ENDPOINT, USBFS_NULL, sizeof(playlistControlReport));
 		}
     }		
-	
 }
 
 /*******************************************************************************
@@ -380,6 +370,7 @@ static void HandleUserInputs(uint32 gesture)
 *  uint8 - status of I2C operation between PSoC 4200L and codec
 *
 *******************************************************************************/
+
 uint8 Update_VolumeAudioOut(void)
 {
 	uint8 ret = 0;
@@ -473,6 +464,6 @@ uint8 Update_VolumeAudioOut(void)
 	
 	return ret;
 }
-
+#endif
 
 /* [] END OF FILE */

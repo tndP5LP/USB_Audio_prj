@@ -36,14 +36,8 @@
 * liability. Use of this Software may be limited by and subject to the applicable
 * Cypress software license agreement.
 *******************************************************************************/
-#include <Application.h>
-#include <AudioControl.h>
-#include <AudioIn.h>
-#include <AudioOut.h>
-#include <Config.h>
-#include <USBInterface.h>
-#include <Codec.h>
-
+#include "project.h"
+#if 0
 extern volatile uint8 USBFS_interfaceSetting[];
 
 extern uint8 USBFS_initVar;
@@ -303,5 +297,5 @@ void processAsyncFeedbackTransfer(uint32 clearFlag)
 		}
 	}
 }
-
+#endif  /* #if 0 */
 /* [] END OF FILE */

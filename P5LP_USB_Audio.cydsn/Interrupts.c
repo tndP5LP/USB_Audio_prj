@@ -36,13 +36,8 @@
 * liability. Use of this Software may be limited by and subject to the applicable
 * Cypress software license agreement.
 *******************************************************************************/
-#include <AudioControl.h>
-#include <AudioOut.h>
-#include <Config.h>
 #include <project.h>
-#include <Application.h>
-#include <Interrupts.h>
-
+#if 0
 extern uint16 inCnt;
 extern uint16 inLevel;
 extern uint16 inUsbCount;
@@ -158,6 +153,6 @@ CY_ISR(TxDMADone_Interrupt)
 		Stop_I2S_Tx();
 	}
 }
-
+#endif  /*  #if 0  */
 
 /* [] END OF FILE */
